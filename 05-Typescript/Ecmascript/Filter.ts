@@ -36,3 +36,12 @@ let arreglo = [
         id:5
     }
 ];
+
+let resultado = arreglo.filter(
+    (valor,indice,arreglo)=>{
+
+        return valor.nota<7;
+
+});
+
+console.log(resultado);

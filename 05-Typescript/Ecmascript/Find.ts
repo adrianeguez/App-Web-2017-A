@@ -22,12 +22,13 @@ let arreglo = [
     }
 ];
 
+/*
 arreglo.find((value)=>{
 
     return value.apellido=="Bermudez"; //Devuelve la primera instancia de Bermudez
 
 });
-
+*/
 
 
 

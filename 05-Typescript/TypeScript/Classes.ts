@@ -4,15 +4,17 @@
 
 
 class UsuarioClass {
+/*
     public nombre:string;
     private apellido:string;
-
+*/
     constructor(
         public nombre:string,
         private apellido?:string){
-
+/*
         this.nombre = nombre;
         this.apellido = apellido;
+        */
     }
 
     ImprimirNombre(

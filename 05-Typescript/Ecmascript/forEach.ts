@@ -12,7 +12,7 @@ let resultado = arregloNumeros.forEach((valor,indice,arreglo)=>{
 
 });
 
-console.log("Resultado es igual a : ",resultado);
+console.log("Resultado es igual a : ",resultado); //undefined
 
 
 

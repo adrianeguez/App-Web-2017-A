@@ -8,3 +8,7 @@
 .idea/modules.xml
 
 .idea/vcs.xml
+
+.idea/typescript-compiler.xml
+
+.idea/watcherTasks.xml

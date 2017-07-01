@@ -29,13 +29,22 @@
     -->
 
     <!--STYLES-->
+    <link rel="stylesheet" href="/styles/EstilosPerfil.css">
     <link rel="stylesheet" href="/styles/importer.css">
+    <link rel="stylesheet" href="/styles/MisEstilos.css">
+    <link rel="stylesheet" href="/Bootstrap/css/bootstrap.css">
     <!--STYLES END-->
   </head>
 
   <body>
-    <%- body %>
 
+  <%- partial('header.ejs') %>
+
+  <div class="container">
+    <%- body %>
+  </div>
+
+  <%- partial('footer.ejs') %>
 
 
     <!--
@@ -87,8 +96,19 @@
 
     -->
 
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.js"
+    integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js"></script>
+  </body>
+
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
+    <script src="/js/MisJavascripts.js"></script>
+    <script src="/Bootstrap/js/bootstrap.js"></script>
     <!--SCRIPTS END-->
-  </body>
+
+
 </html>

@@ -28,9 +28,9 @@ module.exports.connections = {
   * Installed by default.                                                    *
   *                                                                          *
   ***************************************************************************/
-  localDiskDb: {
+    localDiskDb: {
     adapter: 'sails-disk'
-  },
+  }, //npm install --save sails-disk
 
   /***************************************************************************
   *                                                                          *

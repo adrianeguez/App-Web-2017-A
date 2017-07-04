@@ -21,7 +21,7 @@ module.exports = {
       // ( SECRETO )
 
       var token = jwt.sign({
-        exp: 1500000000,
+        exp: 1,
         data: {
           id:parametros.id
         }

@@ -39,13 +39,13 @@ module.exports = {
     if(parametros.token){
       var decodificado = jwt
         .verify(parametros.token, 'mi mama me mima');
-      
+
       return res.ok(decodificado);
     }else{
       return res.badRequest("No envia el token")
     }
   },
-  Validar:function(req,res){
+  ValidarSecret:function(req,res){
     var parametros = req.allParams();
     if(parametros.token){
       var decodificado = jwt

@@ -33,9 +33,8 @@ module.exports.routes = {
   ***************************************************************************/
   //No necesitan seguridad (libres)
 
-  'get /': {
-    view: 'homepage'
-  },
+  'get /': 'VistaController.homepage',
+  
   '/perfil':{
     view:'UsuarioGestion/perfil'
   },

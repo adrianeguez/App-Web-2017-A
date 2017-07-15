@@ -34,13 +34,16 @@ module.exports.routes = {
   //No necesitan seguridad (libres)
 
   'get /': 'VistaController.homepage',
-  
+
   '/perfil':{
     view:'UsuarioGestion/perfil'
   },
 
   'get /ContenidoOculto':
     'VistaController.vistaOculta',
+  //routes.js
+  'get /crearUsuario':
+    'VistaController.crearUsuario',
 
   /***************************************************************************
   *                                                                          *

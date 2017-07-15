@@ -4,13 +4,16 @@ module.exports = {
         return res.view('Oculto/sorpresa');
     },
     homepage: function (req, res) {
-        var usuarioModelo = {
-            nombres: "Adrian",
-            apellidos: "Eguez",
-            id: 1,
-        };
-        return res.view('homepage', {
-            usuario: usuarioModelo
+        Usuario.find().exec(function (err, usuarios) {
+            if (err)
+                return res.negotiate(err);
+            sails.log.info("Usuarios", usuarios);
+            return res.view('homepage', {
+                usuarios: usuarios
+            });
         });
+    },
+    crearUsuario: function (req, res) {
+        return res.view('crearusuario');
     }
 };

@@ -1,17 +1,16 @@
 
 <h1>Homepage</h1>
+<div class="row">
+  <% for(var i=0;i<usuarios.length;i++){ %>
+  <div class="col-sm-4">
 
-<% var numero = 5 %>
-<% usuario.id = usuario.id + numero %>
-<% console.log("El id es:",usuario.id); %>
+    <h1><%=usuarios[i].nombres%></h1>
 
-<p><%= usuario.nombres %></p>
 
-<p><%= usuario.apellidos %></p>
+  </div>
+  <%}%>
 
-<p><%= usuario.id %></p>
-
-<input type="text" value="<%= usuario.nombres %>">
+</div>
 
 
 

@@ -11,18 +11,23 @@ module.exports = {
   },
   homepage:(req,res)=>{
 
-    let usuarioModelo = {
-      nombres:"Adrian",
-      apellidos:"Eguez",
-      id:1,
-    };
+    Usuario.find().exec((err,usuarios)=>{
+      if(err) return res.negotiate(err);
+      sails.log.info("Usuarios",usuarios);
 
-    return res.view('homepage',{
-      usuario:usuarioModelo
+      return res.view('homepage',{
+        usuarios:usuarios
+      })
     })
-
-
-
+  },
+  crearUsuario:(req,res)=>{
+      return res.view('crearusuario')
   }
 
 };
+
+
+
+
+
+

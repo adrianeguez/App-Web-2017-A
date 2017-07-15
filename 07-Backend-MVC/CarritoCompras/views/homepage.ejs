@@ -1,2 +1,35 @@
 
 <h1>Homepage</h1>
+<div class="row">
+  <% for(var i=0;i<usuarios.length;i++){ %>
+  <div class="col-sm-4">
+
+    <h1><%=usuarios[i].nombres%></h1>
+
+    <form action="/Saludo/eliminarUsuario?id=<%=usuarios[i].id%>" method="post">
+
+      <button  type="submit"
+        class="btn btn-outline-danger">Borrar</button> 
+
+    </form>
+
+
+  </div>
+  <%}%>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -32,7 +32,12 @@ module.exports = {
   },
   crearUsuarioQuemado:(req,res)=>{
 
+    // http://localhost:1337/Saludo/crearUsuarioQuemado
+    // /Saludo/crearUsuarioQuemado ->RELATIVE PATH
+
     let parametros = req.allParams();
+
+    sails.log.info("Parametros",parametros);
 
 
     //  Ejemplo para crear por parametros query

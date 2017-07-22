@@ -10,8 +10,21 @@ module.exports = {
     return res.view('Oculto/sorpresa')
   },
   homepage:(req,res)=>{
+    let parametros = req.allParams();
 
-    Usuario.find().exec((err,usuarios)=>{
+    sails.log.info("Parametros",parametros);
+
+
+    //let where = {};
+
+    Usuario
+      .find()
+      .where({
+        nombres:{
+          contains:parametros.busqueda
+        }
+      })
+      .exec((err,usuarios)=>{
       if(err) return res.negotiate(err);
       sails.log.info("Usuarios",usuarios);
 

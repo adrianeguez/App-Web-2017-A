@@ -1,5 +1,21 @@
 
 <h1>Homepage</h1>
+
+
+<form action="">
+  <div class="form-group row">
+    <label for="busqueda" class="col-4 col-form-label">
+      Busque por nombres o apellidos
+    </label>
+    <div class="col-8">
+      <input class="form-control" type="text" placeholder="Buscar" id="busqueda"
+             name="busqueda">
+    </div>
+  </div>
+  <button class="btn btn-success btn-block"> Buscar</button>
+</form>
+
+
 <div class="row">
   <% for(var i=0;i<usuarios.length;i++){ %>
   <div class="col-sm-4">

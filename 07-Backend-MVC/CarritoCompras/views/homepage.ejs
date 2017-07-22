@@ -6,10 +6,15 @@
 
     <h1><%=usuarios[i].nombres%></h1>
 
-    <form action="/Saludo/eliminarUsuario?id=<%=usuarios[i].id%>" method="post">
+    <form action="/Usuario/eliminarUsuario" method="post">
+
+      <input hidden
+             type="text"
+             value="<%=usuarios[i].id%>"
+             name="id">
 
       <button  type="submit"
-        class="btn btn-outline-danger">Borrar</button> 
+        class="btn btn-outline-danger">Borrar</button>
 
     </form>
 

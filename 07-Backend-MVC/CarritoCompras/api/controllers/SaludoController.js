@@ -62,5 +62,5 @@ module.exports = {
                 //return res.ok(usuarioCreado);
             }
         });
-    }
+    },
 };

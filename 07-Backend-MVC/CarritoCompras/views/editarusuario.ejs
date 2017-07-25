@@ -1,0 +1,67 @@
+<h1>Crear Usuario</h1>
+
+<form action="/Saludo/crearUsuarioQuemado" method="post">
+
+
+  <div class="form-group row">
+    <label for="nombres" class="col-2 col-form-label">Nombres</label>
+    <div class="col-10">
+      <input class="form-control"
+             type="text"
+             placeholder="Ingrese sus nombres"
+             id="nombres"
+             name="nombres"
+
+      >
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="apellidos" class="col-2 col-form-label">Apellidos</label>
+    <div class="col-10">
+      <input class="form-control" type="text"
+             placeholder="Ingrese sus Apellidos"
+             name="apellidos"
+             id="apellidos">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="correo" class="col-2 col-form-label">Correo</label>
+    <div class="col-10">
+      <input class="form-control" type="email" placeholder="Ingrese su correo" id="correo"
+             name="correo">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="fecha-nacimiento" class="col-2 col-form-label">Fecha nacimiento</label>
+    <div class="col-10">
+      <input class="form-control" type="date" placeholder="Ingrese su fecha de Nacimiento"
+             name="fechaNacimiento"
+             id="fecha-nacimiento">
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <label for="password" class="col-2 col-form-label">Password</label>
+    <div class="col-10">
+      <input class="form-control" type="password" placeholder="Ingrese un password"
+             name="password"
+             id="password">
+    </div>
+  </div>
+
+
+
+  <button type="button"
+          class="btn btn-outline-secondary">Boton</button>
+
+  <button
+    class="btn btn-outline-success">Crear</button>
+
+  <button type="reset"
+          class="btn btn-outline-warning">Reset</button>
+
+</form>

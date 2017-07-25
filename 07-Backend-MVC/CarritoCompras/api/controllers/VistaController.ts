@@ -46,6 +46,9 @@ module.exports = {
   },
   crearUsuario:(req,res)=>{
       return res.view('crearusuario')
+  },
+  editarUsuario:(req,res)=>{
+    return res.view('editarusuario')
   }
 
 };

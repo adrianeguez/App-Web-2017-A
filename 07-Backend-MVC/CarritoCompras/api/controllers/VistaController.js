@@ -37,5 +37,8 @@ module.exports = {
     },
     crearUsuario: function (req, res) {
         return res.view('crearusuario');
+    },
+    editarUsuario: function (req, res) {
+        return res.view('editarusuario');
     }
 };

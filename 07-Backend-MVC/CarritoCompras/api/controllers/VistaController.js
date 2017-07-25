@@ -6,13 +6,25 @@ module.exports = {
     homepage: function (req, res) {
         var parametros = req.allParams();
         sails.log.info("Parametros", parametros);
+        if (!parametros.busqueda) {
+            parametros.busqueda = '';
+        }
         //let where = {};
         Usuario
             .find()
             .where({
-            nombres: {
-                contains: parametros.busqueda
-            }
+            or: [
+                {
+                    nombres: {
+                        contains: parametros.busqueda
+                    }
+                },
+                {
+                    apellidos: {
+                        contains: parametros.busqueda
+                    }
+                }
+            ]
         })
             .exec(function (err, usuarios) {
             if (err)

@@ -5,6 +5,14 @@
 <form action="/Saludo/crearUsuarioQuemado" method="post">
 
 
+  <input hidden
+         class="form-control"
+         type="text"
+         id="id"
+         name="id"
+         value="<%= usuario.id %>">
+
+
   <div class="form-group row">
     <label for="nombres" class="col-2 col-form-label">Nombres</label>
     <div class="col-10">

@@ -44,6 +44,8 @@ module.exports.routes = {
   //routes.js
   'get /crearUsuario':
     'VistaController.crearUsuario',
+  'get /editarUsuario':
+    'VistaController.editarUsuario',
 
   /***************************************************************************
   *                                                                          *

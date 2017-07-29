@@ -1,0 +1,79 @@
+<h1>Usted esta editando a:
+  <%= usuario.nombres %>
+</h1>
+
+<form action="/Usuario/editarUsuario" method="post">
+
+
+  <input hidden
+         class="form-control"
+         type="text"
+         id="id"
+         name="id"
+         value="<%= usuario.id %>">
+
+
+  <div class="form-group row">
+    <label for="nombres" class="col-2 col-form-label">Nombres</label>
+    <div class="col-10">
+      <input class="form-control"
+             type="text"
+             placeholder="Ingrese sus nombres"
+             id="nombres"
+             name="nombres"
+             value="<%= usuario.nombres %>"
+
+      >
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="apellidos" class="col-2 col-form-label">Apellidos</label>
+    <div class="col-10">
+      <input class="form-control" type="text"
+             placeholder="Ingrese sus Apellidos"
+             name="apellidos"
+             id="apellidos"
+             value="<%= usuario.apellidos %>"
+      >
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="correo" class="col-2 col-form-label">Correo</label>
+    <div class="col-10">
+      <input class="form-control" type="email" placeholder="Ingrese su correo" id="correo"
+             name="correo"
+             value="<%= usuario.correo %>">
+    </div>
+  </div>
+
+  <!--
+  <div class="form-group row">
+    <label for="fecha-nacimiento" class="col-2 col-form-label">Fecha nacimiento</label>
+    <div class="col-10">
+      <input class="form-control" type="date" placeholder="Ingrese su fecha de Nacimiento"
+             name="fechaNacimiento"
+             id="fecha-nacimiento"
+             value="<%= usuario.fechaNacimiento.getYear()%>"
+      >
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+    <label for="password" class="col-2 col-form-label">Password</label>
+    <div class="col-10">
+      <input class="form-control" type="password" placeholder="Ingrese un password"
+             name="password"
+             id="password">
+    </div>
+  </div>
+
+    -->
+
+  <button
+    class="btn btn-outline-success">Editar</button>
+
+
+</form>

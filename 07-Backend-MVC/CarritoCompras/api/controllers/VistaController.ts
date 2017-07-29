@@ -46,6 +46,38 @@ module.exports = {
   },
   crearUsuario:(req,res)=>{
       return res.view('crearusuario')
+  },
+  editarUsuario:(req,res)=>{
+
+    let parametros = req.allParams();
+    if(parametros.id){
+
+      Usuario.findOne({
+        id:parametros.id
+      })
+        .exec((err,usuarioEncontrado)=>{
+          if(err) return res.serverError(err);
+
+          if(usuarioEncontrado){
+            //Si encontro
+
+            return res.view('editarusuario',{
+              usuario:usuarioEncontrado
+            })
+
+          }else{
+            //No encontro
+            return res.redirect('/crearUsuario')
+          }
+        });
+
+    }else{
+      return res.redirect('/crearUsuario')
+    }
+
+
+
+
   }
 
 };

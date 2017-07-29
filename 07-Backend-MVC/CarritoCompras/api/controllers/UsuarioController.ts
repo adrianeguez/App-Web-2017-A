@@ -58,9 +58,7 @@ module.exports = {
             //No encontro
             return res.notFound()
           }
-
         })
-
       }else{
         return res.badRequest()
       }

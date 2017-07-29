@@ -8,7 +8,17 @@
 module.exports = {
 
   attributes: {
-
+    horaFechaInicioMatriculacion:{
+      type:'datetime'
+    },
+    horaFechaFinMatriculacion:{
+      type:'datetime'
+    },
+    estado:{
+      type:'string',
+      enum:['Matriculado','Pendiente','Denegado'],
+      defaultsTo:'Pendiente'
+    }
   }
 };
 

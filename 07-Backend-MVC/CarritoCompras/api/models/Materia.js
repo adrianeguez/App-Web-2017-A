@@ -25,6 +25,10 @@ module.exports = {
       type:'string',
       enum:['Activo','Inactivo'],
       defaultsTo:'Activo'
+    },
+    materiasMatriculas:{
+      collection:'MateriaMatricula',
+      via:'fkIdMateria'
     }
   }
 };

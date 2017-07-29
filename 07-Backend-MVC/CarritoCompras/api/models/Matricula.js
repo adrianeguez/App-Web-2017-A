@@ -18,6 +18,18 @@ module.exports = {
       type:'string',
       enum:['Matriculado','Pendiente','Denegado'],
       defaultsTo:'Pendiente'
+    },
+    fkIdPeriodoAcademico:{
+      model:'PeriodoAcademico',
+      required:true
+    },
+    fkIdUsuario:{
+      model:'Usuario',
+      required:true
+    },
+    materiasMatriculas:{
+      collection:'MateriaMatricula',
+      via:'fkIdMatricula'
     }
   }
 };

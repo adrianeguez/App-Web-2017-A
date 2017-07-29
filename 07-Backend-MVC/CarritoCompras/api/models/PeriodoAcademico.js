@@ -23,6 +23,10 @@ module.exports = {
     fkIdCarrera:{
       model:'Carrera',
       required:true
+    },
+    matriculas:{
+      collection:'Matricula',
+      via:'fkIdPeriodoAcademico'
     }
   }
 };

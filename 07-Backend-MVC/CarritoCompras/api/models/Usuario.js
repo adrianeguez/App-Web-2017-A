@@ -17,6 +17,10 @@ module.exports = {
         },
         fechaNacimiento: {
             type: "date"
+        },
+        matriculas: {
+            collection: 'Matricula',
+            via: 'fkIdUsuario'
         }
     }
 };

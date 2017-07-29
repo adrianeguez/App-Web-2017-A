@@ -21,6 +21,14 @@ module.exports = {
       type:'string',
       enum:['Estudiando','Topamos','Exonerado','Supletorio'],
       defaultsTo:'Estudiando'
+    },
+    fkIdMatricula:{
+      model:'Matricula',
+      required:true
+    },
+    fkIdMateria:{
+      model:'Materia',
+      required:true
     }
   }
 };

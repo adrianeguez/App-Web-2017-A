@@ -11,6 +11,9 @@ module.exports = {
     nombre:{
       type:'string',
       required:true
+    },
+    fkIdUniversidad:{
+      model:'Universidad'
     }
 
   }

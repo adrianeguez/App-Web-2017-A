@@ -8,7 +8,20 @@
 module.exports = {
 
   attributes: {
-
+    notaPrimerBimestre:{
+      type:'float'
+    },
+    notaSegundoBimestre:{
+      type:'float'
+    },
+    notaSupletorio:{
+      type:'float'
+    },
+    estado:{ // Jalado aka Topamos
+      type:'string',
+      enum:['Estudiando','Topamos','Exonerado','Supletorio'],
+      defaultsTo:'Estudiando'
+    }
   }
 };
 

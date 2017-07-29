@@ -13,7 +13,8 @@ module.exports = {
       required:true
     },
     fkIdUniversidad:{
-      model:'Universidad'
+      model:'Universidad',
+      required:true
     }
 
   }

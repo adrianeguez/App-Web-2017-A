@@ -6,11 +6,18 @@
  */
 
 module.exports = {
-
   attributes: {
     nombre:{
       type:'string',
       required:true
+    },
+    fkIdFacultad:{
+      model:'Facultad',
+      required:true
+    },
+    carreras:{
+      collection:'Carrera',
+      via:'fkIdDepartamento'
     }
   }
 };

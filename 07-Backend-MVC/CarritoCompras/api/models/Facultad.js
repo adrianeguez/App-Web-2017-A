@@ -15,6 +15,10 @@ module.exports = {
     fkIdUniversidad:{
       model:'Universidad',
       required:true
+    },
+    departamentos:{
+      collection:'Departamento',
+      via:'fkIdFacultad'
     }
 
   }

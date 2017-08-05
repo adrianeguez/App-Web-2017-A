@@ -1,6 +1,26 @@
 
 <h1>Homepage</h1>
 
+
+<h2>Crear Usuario</h2>
+
+<div class="form-group row">
+  <label for="nombres" class="col-4 col-form-label">
+    Ingrese Nombres
+  </label>
+  <div class="col-8">
+    <input class="form-control" type="text" placeholder="Vicente Adrian" id="nombres">
+  </div>
+</div>
+
+<button class="btn btn-primary" onclick="crearNuevoUsuario()">
+  Crear Nuevo Usuario
+</button>
+
+
+<h2>Busqueda de Usuarios</h2>
+
+
 <form action="/">
   <div class="form-group row">
     <label for="busqueda" class="col-4 col-form-label">
@@ -56,6 +76,26 @@
 
 
 
+<script>
+
+  var url = "http://localhost:1337/Usuario";
+  var metodo = "POST";
+  var campoNombre;
+  var usuario;
+  function crearNuevoUsuario(){
+
+    campoNombre = document
+      .getElementById("nombres")
+      .value;
+    usuario = {
+      nombres:campoNombre
+    }
+
+    console.log(usuario);
+  }
+
+
+</script>
 
 
 

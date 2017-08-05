@@ -37,7 +37,7 @@
 <br>
 <br>
 
-<div class="row">
+<div id="contenedor" class="row">
   <% for(var i=0;i<usuarios.length;i++){ %>
   <div class="col-sm-4">
 
@@ -80,8 +80,12 @@
 
   var url = "http://localhost:1337/Usuario";
   var metodo = "POST";
+  var xhttp;
   var campoNombre;
   var usuario;
+
+
+
   function crearNuevoUsuario(){
 
     campoNombre = document
@@ -90,8 +94,56 @@
     usuario = {
       nombres:campoNombre
     }
+    // crear el nuevo http request
+    xhttp = new XMLHttpRequest();
 
-    console.log(usuario);
+    // Definicion de la funcion
+    // que es lo que va a pasar cuando me responda
+    xhttp.onreadystatechange =
+      agregarUsuarioALaInterfaz
+
+    // Definir (URL y METODO, DATOS)
+
+    var parametros = "?nombres="+usuario.nombres
+    xhttp.open(metodo,url+parametros)
+
+    // Enviar el request
+
+    xhttp.send();
+
+
+
+  }
+
+
+  function agregarUsuarioALaInterfaz(){
+
+    if (this.readyState == 4 && this.status == 201) {
+      var usuarioCreado =
+        JSON.parse(xhttp.responseText);
+
+      var nuevoUsuarioNodo =
+        document.createElement("div")
+
+      nuevoUsuarioNodo.className = "col-sm-4";
+
+      var htmlNuevoUsuario =
+        "<h1>"+usuarioCreado.nombres+"</h1>"
+
+      nuevoUsuarioNodo.innerHTML = htmlNuevoUsuario;
+
+      var contenedor =
+        document.getElementById("contenedor")
+      contenedor.appendChild(nuevoUsuarioNodo);
+
+
+    }else{
+
+    }
+
+
+
+
   }
 
 

@@ -40,8 +40,11 @@ module.exports = {
 
       let cookies = req.cookies;
 
+      console.log(cookies.arregloUsuarios);
+
       if(cookies.arregloUsuarios){
         let arregloUsuarios = cookies.arregloUsuarios.idsCliente;
+        console.log(arregloUsuarios);
 
         return res.view('homepage',{
           usuarios:usuarios,
@@ -49,18 +52,12 @@ module.exports = {
         })
 
       }else{
-        
+
         return res.view('homepage',{
           usuarios:usuarios
         })
 
       }
-
-
-
-
-
-
 
     })
   },

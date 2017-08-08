@@ -30,8 +30,10 @@ module.exports = {
             if (err)
                 return res.negotiate(err);
             var cookies = req.cookies;
+            console.log(cookies.arregloUsuarios);
             if (cookies.arregloUsuarios) {
                 var arregloUsuarios = cookies.arregloUsuarios.idsCliente;
+                console.log(arregloUsuarios);
                 return res.view('homepage', {
                     usuarios: usuarios,
                     arregloUsuarios: arregloUsuarios

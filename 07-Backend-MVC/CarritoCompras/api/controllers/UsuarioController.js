@@ -56,16 +56,30 @@ module.exports = {
         var parametros = req.allParams();
         if (parametros.id) {
             var cookies = req.cookies;
+            console.log(cookies);
             if (cookies.arregloUsuarios) {
-                var arregloUsuarios = cookies.arregloUsuarios;
+                var arregloUsuarios = cookies.arregloUsuarios.idsCliente;
+                sails.log.info(arregloUsuarios);
                 var existeUsuario = arregloUsuarios.find(function (idUsuario) {
                     return idUsuario == parametros.id;
                 });
+                /*
+                let existeUsuario;
+                for(let i=0;i<arregloUsuarios.length;i++){
+                  if(arregloUsuarios[i]==parametros.id){
+                    existeUsuario = parametros.id;
+                  }
+                }/////////////////////////
+                 */
+                console.log(existeUsuario);
                 if (existeUsuario) {
                     return res.redirect('/');
                 }
                 else {
                     arregloUsuarios.push(parametros.id);
+                    res.cookie('arregloUsuarios', {
+                        idsCliente: arregloUsuarios
+                    });
                     return res.redirect('/');
                 }
             }

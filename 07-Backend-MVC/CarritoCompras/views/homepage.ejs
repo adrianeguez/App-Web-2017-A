@@ -60,9 +60,20 @@
         <button type="button" class="btn btn-primary">
           Editar
         </button>
-
       </a>
 
+    </form>
+
+    <form action="/Usuario/AnadirUsuarioCarrito" method="post">
+
+      <input hidden
+             type="text"
+             name="id"
+             value="<%=usuarios[i].id%>">
+
+      <button type="submit" class="btn btn-primary">
+        Añadir Usuario a Carrito
+      </button>
     </form>
 
 

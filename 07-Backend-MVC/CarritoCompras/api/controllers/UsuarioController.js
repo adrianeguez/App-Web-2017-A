@@ -59,19 +59,9 @@ module.exports = {
             console.log(cookies);
             if (cookies.arregloUsuarios) {
                 var arregloUsuarios = cookies.arregloUsuarios.idsCliente;
-                sails.log.info(arregloUsuarios);
                 var existeUsuario = arregloUsuarios.find(function (idUsuario) {
                     return idUsuario == parametros.id;
                 });
-                /*
-                let existeUsuario;
-                for(let i=0;i<arregloUsuarios.length;i++){
-                  if(arregloUsuarios[i]==parametros.id){
-                    existeUsuario = parametros.id;
-                  }
-                }/////////////////////////
-                 */
-                console.log(existeUsuario);
                 if (existeUsuario) {
                     return res.redirect('/');
                 }

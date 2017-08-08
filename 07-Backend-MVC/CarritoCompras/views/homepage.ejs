@@ -1,6 +1,19 @@
 
 <h1>Homepage</h1>
 
+<% if(typeof arregloUsuarios != 'undefined') {%>
+<h3> Lista arreglo Usuarios </h3>
+<ul>
+
+  <% for(var j=0; arregloUsuarios.length ;j++){%>
+  <li> Id Usuario: <%=arregloUsuarios[j]%> </li>
+  <% }%>
+
+</ul>
+<% }%>
+
+
+
 
 <h2>Crear Usuario</h2>
 

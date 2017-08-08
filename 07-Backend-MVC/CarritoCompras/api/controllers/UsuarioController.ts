@@ -72,14 +72,38 @@ module.exports = {
 
     if(parametros.id){
       let cookies = req.cookies;
-      console.log('Cookies del cliente ', cookies);
 
-      res.cookies({
-        idsCliente:parametros.id
-      });
+      if(cookies.arregloUsuarios){
+
+        let arregloUsuarios = cookies.arregloUsuarios;
+
+        let existeUsuario = arregloUsuarios.find(
+          (idUsuario)=>{
+            return idUsuario == parametros.id;
+          }
+        );
+
+        if(existeUsuario){
+
+          return res.redirect('/');
+
+        }else{
+
+          arregloUsuarios.push(parametros.id);
+          return res.redirect('/');
+
+        }
 
 
-      return res.redirect('/');
+      } else{
+        let arregloUsuarios = [];
+        arregloUsuarios.push(parametros.id);
+        res.cookie('arregloUsuarios',{
+          idsCliente:arregloUsuarios
+        });
+        return res.redirect('/');
+      }
+
     }else{
       return res.badRequest('No envia parametros');
     }

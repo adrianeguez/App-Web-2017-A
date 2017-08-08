@@ -56,11 +56,27 @@ module.exports = {
         var parametros = req.allParams();
         if (parametros.id) {
             var cookies = req.cookies;
-            console.log('Cookies del cliente ', cookies);
-            res.cookies({
-                idsCliente: parametros.id
-            });
-            return res.redirect('/');
+            if (cookies.arregloUsuarios) {
+                var arregloUsuarios = cookies.arregloUsuarios;
+                var existeUsuario = arregloUsuarios.find(function (idUsuario) {
+                    return idUsuario == parametros.id;
+                });
+                if (existeUsuario) {
+                    return res.redirect('/');
+                }
+                else {
+                    arregloUsuarios.push(parametros.id);
+                    return res.redirect('/');
+                }
+            }
+            else {
+                var arregloUsuarios = [];
+                arregloUsuarios.push(parametros.id);
+                res.cookie('arregloUsuarios', {
+                    idsCliente: arregloUsuarios
+                });
+                return res.redirect('/');
+            }
         }
         else {
             return res.badRequest('No envia parametros');

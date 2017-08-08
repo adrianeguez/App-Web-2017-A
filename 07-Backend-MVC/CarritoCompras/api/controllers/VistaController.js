@@ -29,10 +29,19 @@ module.exports = {
             .exec(function (err, usuarios) {
             if (err)
                 return res.negotiate(err);
-            sails.log.info("Usuarios", usuarios);
-            return res.view('homepage', {
-                usuarios: usuarios
-            });
+            var cookies = req.cookies;
+            if (cookies.arregloUsuarios) {
+                var arregloUsuarios = cookies.arregloUsuarios.idsCliente;
+                return res.view('homepage', {
+                    usuarios: usuarios,
+                    arregloUsuarios: arregloUsuarios
+                });
+            }
+            else {
+                return res.view('homepage', {
+                    usuarios: usuarios
+                });
+            }
         });
     },
     crearUsuario: function (req, res) {

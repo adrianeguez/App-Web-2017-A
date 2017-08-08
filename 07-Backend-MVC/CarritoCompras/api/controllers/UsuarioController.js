@@ -51,5 +51,19 @@ module.exports = {
         else {
             return res.badRequest();
         }
+    },
+    AnadirUsuarioCarrito: function (req, res) {
+        var parametros = req.allParams();
+        if (parametros.id) {
+            var cookies = req.cookies;
+            console.log('Cookies del cliente ', cookies);
+            res.cookies({
+                idsCliente: parametros.id
+            });
+            return res.redirect('/');
+        }
+        else {
+            return res.badRequest('No envia parametros');
+        }
     }
 };
